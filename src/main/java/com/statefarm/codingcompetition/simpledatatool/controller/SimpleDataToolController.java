@@ -150,7 +150,9 @@ public class SimpleDataToolController {
             customerPremiums.put(customer.getId(), sumMonthlyPremiumForCustomerId(policies, customer.getId()));
         }
         Map.Entry<Integer, Double> maxEntry = null;
+        int key = 0;
         for (Map.Entry<Integer, Double> entry : customerPremiums.entrySet()) {
+            //Check the value of the current entry
             if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
                 maxEntry = entry;
             }
